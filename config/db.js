@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
-const mognURL =
-  "mongodb+srv://himangshumahato82:himu82@cluster0.o1tg8gs.mongodb.net/?retryWrites=true&w=majority";
+
+  
 const ConnectDB = () => {
+  const mognURL =process.env.mognURL
   mongoose
     .connect(mognURL, { useNewUrlParser: true })
     .then((res) => console.log(res.connection.db.databaseName))
